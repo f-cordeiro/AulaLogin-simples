@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -143,6 +144,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -162,9 +164,13 @@
 
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="Senha" placeholder="Digite sua senha" required>
+                <input type="password" id="password" name="senha" placeholder="Digite sua senha" required>
             </div>
 
+            {% if erro %}
+                <p style="color: red">{{ erro }}</p>
+            {% endif %}
+            <br>
             <button type="submit">Cadastrar</button>
         </form>
 
@@ -174,4 +180,5 @@
     </div>
 
 </body>
+
 </html>

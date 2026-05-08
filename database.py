@@ -22,7 +22,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 #Conexão com o db
 engine = create_engine(DATABASE_URL)
 
-Session = sessionmaker()
+Session = sessionmaker(bind=engine)
 
 #Função para o fastapi ter a conexão com o db
 def get_db():
