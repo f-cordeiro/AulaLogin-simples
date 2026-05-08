@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SENAI - Bem-vindo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --senai-blue: #164194;
+            --senai-blue-light: #0088D2;
+            --senai-orange: #E84910;
+            --bg-color: #f4f7f9;
+            --text-color: #2d3436;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e9eff5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elementos decorativos de fundo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: var(--senai-blue);
+            opacity: 0.03;
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .content h2 {
+            color: var(--senai-orange);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .content h1 {
+            color: var(--senai-blue);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: #636e72;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--senai-blue);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(22, 65, 148, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #0d2d6b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(22, 65, 148, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--senai-blue);
+            border: 2px solid var(--senai-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--senai-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-preview {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-left: 8px solid var(--senai-blue);
+            transform: rotate(3deg);
+            transition: transform 0.5s ease;
+        }
+
+        .card-preview:hover {
+            transform: rotate(0deg);
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 900;
+            font-style: italic;
+            color: var(--senai-blue);
+            margin-bottom: 1rem;
+        }
+
+        .logo-text span {
+            color: var(--senai-orange);
+        }
+
+        .tagline {
+            font-weight: 600;
+            color: #b2bec3;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #b2bec3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+            .content h1 {
+                font-size: 2.5rem;
+            }
+            .content p {
+                margin: 0 auto 2.5rem;
+            }
+            .actions {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .visual {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="content">
+                <h2>Educação Profissional</h2>
+                <h1>O futuro da indústria começa aqui.</h1>
+                <p>Acesse nossa plataforma para gerenciar seus cursos, certificados e transformar sua carreira com o SENAI.</p>
+                
+                <div class="actions">
+                    <a href="/login" class="btn btn-primary">Acessar Conta</a>
+                    <a href="/cadastro" class="btn btn-secondary">Criar Cadastro</a>
+                </div>
+            </div>
+
+            <div class="visual">
+                <div class="card-preview">
+                    <div class="logo-text">SENA<span>I</span></div>
+                    <p class="tagline">Pelo futuro do trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 SENAI - Serviço Nacional de Aprendizagem Industrial. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

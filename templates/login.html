@@ -3,18 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - SENAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --senai-blue: #164194;
+            --senai-blue-light: #0088D2;
+            --senai-orange: #E84910;
+            --bg-color: #f4f7f9;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            border-top: 6px solid var(--senai-blue);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: var(--senai-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--senai-blue);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--senai-blue-light);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: var(--senai-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background-color: #0d2d6b;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: var(--senai-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .logo-placeholder {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 900;
+            font-style: italic;
+            color: var(--senai-blue);
+        }
+
+        .logo-text span {
+            color: var(--senai-orange);
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: -1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
 
-    <form action="/login" method="post">
-        Email: <input type="email" name="email" placeholder="Digite seu email">
-        <br> <br>
-        Senha: <input type="password" name="Senha" placeholder="Digite sua senha">
-        <br> <br>
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+        <div class="header">
+            <div class="logo-placeholder">
+                <div class="logo-text">SENA<span>I</span></div>
+            </div>
+            <h1>Login</h1>
+            <p>Acesse sua conta no portal</p>
+        </div>
+
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="Senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <div class="footer-links">
+            <p>Não possui uma conta? <a href="/cadastro">Crie uma agora</a></p>
+            <br>
+        </div>
+    </div>
 
 </body>
 </html>

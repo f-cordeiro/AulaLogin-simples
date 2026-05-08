@@ -12,6 +12,14 @@ app = FastAPI(title="Sistema de login simples")
 
 templates = Jinja2Templates(directory="templates")
 
+@app.get("/")
+def tela_inicial(request: Request):
+    return templates.TemplateResponse(
+        request,
+        "main.html",
+        {"request": request}
+    )
+
 @app.get("/cadastro")
 def tela_cadastro(request: Request):
     return templates.TemplateResponse(
