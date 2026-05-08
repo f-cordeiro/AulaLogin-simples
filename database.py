@@ -16,6 +16,7 @@ class Usuario(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(150), unique=True, nullable=False)
     senha = Column(String(100), nullable=False)
+    nome = Column(String(100))
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 

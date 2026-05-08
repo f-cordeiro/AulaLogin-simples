@@ -43,6 +43,7 @@ def cadastrar_usuario(
     request: Request,
     email: str = Form(...),
     senha: str = Form(...),
+    nome: str = Form(...),
     db: Session = Depends(get_db)
 ):
     
@@ -58,7 +59,7 @@ def cadastrar_usuario(
         )
     
     #Cria um objeto
-    novo_usuario = Usuario(email=email, senha=senha)
+    novo_usuario = Usuario(email=email, senha=senha, nome=nome)
     db.add(novo_usuario)
     db.commit()
 
@@ -113,3 +114,11 @@ def tela_poslogin(request: Request, db: Session = Depends(get_db)):
         {"request": request, "usuario": user_existente}
     )
 
+
+#Logout do sistema - Sair
+@app.get("/logout")
+def logout():
+    response = RedirectResponse(url="/", status_code=303)
+    response.delete_cookie("usuario_id")
+
+    return response 
